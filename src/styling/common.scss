@@ -61,6 +61,7 @@ p{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
   &.withTopArrow{
     height: calc(100% - 55px);
   }
