@@ -1,0 +1,45 @@
+
+@media (orientation: landscape) {
+  .rightPanel{
+    .searchSection ul{
+      max-height:calc(100 - calc(calc(122 / 768) * 100)) + vh;
+    }
+  }
+  .main{
+    max-height:calc(100 - calc(calc(87 / 768) * 100)) + vh;
+  }
+  .missingBreakContainer{
+    max-height:calc(100 - calc(calc(350 / 768) * 100)) + vh;
+  }
+}
+@media (orientation: portrait) {
+    .leftPanel{
+      @include calcMulti((
+        width: 268,
+        flex-basis: 268,
+        padding-left: 52
+      ));
+    }
+    .rightPanel{
+      @include calcMulti((
+        padding-left: 40,
+        padding-right: 52,
+      ));
+      .searchSection ul{
+        max-height:calc(100 - calc(calc(122 / 1024) * 100)) + vh;
+      }
+    }
+    .header{
+      @include calcMulti((
+        padding-left: 52,
+        padding-right: 52,
+      ));
+    }
+    .main{
+      max-height:calc(100 - calc(calc(87 / 1024) * 100)) + vh;
+    }
+    .missingBreakContainer{
+      max-height:calc(100 - calc(calc(350 / 1024) * 100)) + vh;
+    }
+}
+

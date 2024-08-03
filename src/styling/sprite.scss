@@ -1,0 +1,62 @@
+*[class^="icn-"]{
+  background-image: url('../images/sprite.svg');
+  font-size: 0px;
+  line-height: 0px;
+  text-decoration: none;
+  display: inline-block;
+}
+@mixin icnSize($size, $left, $top) {
+  width: $size + px;
+  height: $size + px;
+  background-position: $left+px $top + px;
+}
+.icn-uzio{
+  @include icnSize(60, 0, 0);
+}
+.icn-uzio-sm{
+  @include icnSize(30, -65, 0);
+}
+.icn-search{
+  @include icnSize(18, -65, -35);
+} 
+.icn-back-arrow{
+  @include icnSize(16, -85, -33);
+  cursor: pointer;
+}
+.icn-back-button{
+  @include icnSize(48, 0, -64);
+  cursor: pointer;
+}
+.icn-checkGreen{
+  @include icnSize(122, -700, 0);
+}
+.icn-clockedIn{
+  @include icnSize(185, -110, 0);
+  height: 126px;
+}
+.icn-clockedOut{
+  @include icnSize(185, -300, 0);
+  height: 126px;
+}
+.icn-breakOut{
+  @include icnSize(190, -500, 0);
+}
+.icn-clock-sm{
+  @include icnSize(18, -80, -90)
+}
+.icn-change{
+  @include icnSize(20, -79, -58);
+  cursor:pointer;
+}
+.icn-breifcase{
+  @include icnSize(20, -54, -88)
+}
+.icn-break-cup{
+  @include icnSize(20, -56, -65)
+}
+.icn-translate{
+  @include icnSize(24, 0, -115)
+}
+.icn-bulb-white{
+  @include icnSize(30, -30, -115)
+}

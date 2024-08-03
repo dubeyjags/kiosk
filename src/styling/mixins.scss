@@ -1,0 +1,102 @@
+// Using @for to generate classes with different margins
+@for $i from 1 through 10 {
+  .offsetR#{$i*5} {
+    margin-right: $i * 5px;
+  }
+  .offsetL#{$i*5} {
+    margin-left: $i * 5px;
+  }
+  .offsetT#{$i*5} {
+    margin-top: $i * 5px;
+  }
+}
+$marginBottoms: 0,18,22,36,68;
+@each $margin in $marginBottoms {
+  .marginB#{$margin} {
+    margin-bottom: $margin + px;
+  }
+} 
+
+$colors: (
+  dark: #333333,
+  light: #777777,
+);
+@each $name, $code in $colors {
+  .text-#{$name} {
+    color: #{$code};
+  }
+}
+
+$cursors: (pointer,not-allowed);
+@each $cursor in $cursors {
+  .cursor-#{$cursor} {
+    cursor: #{$cursor};
+  }
+}
+
+$widths:260, 400;
+@each $width in $widths {
+  .width#{$width} {
+    width: $width + px;
+  }
+} 
+
+// Using @for to generate classes with different fonts
+$vhSpaces: (
+  10: 10,
+  20: 20,
+  30: 30,
+  40: 40,
+  50: 50,
+  60: 60,
+  70: 70,
+);
+@each $px, $vh in $vhSpaces {
+  .spaceT#{$px} {
+    margin-top: #{$vh}+px;
+  }
+  .spaceB#{$px} {
+    margin-bottom: #{$vh}+px;
+  }
+}
+
+// Using @for to generate classes with different fonts
+$fonts: 12,14,16,18,20,24,26,30,52,68;
+
+  @media (orientation: landscape) {
+    @each $font in $fonts {
+      .font#{$font} {
+        font-size: calc(($font / 1024) * 100) + vw;
+      }
+    } 
+  }
+  @media (orientation: portrait) {
+    @each $font in $fonts {
+      .font#{$font} {
+        font-size: calc(($font / 768) * 100) + vw;
+      } 
+    } 
+  }
+
+
+@mixin fontSize($size) {
+    @media (orientation: landscape) {
+          font-size: calc(($size / 1024) * 100) + vw;
+    }
+    @media (orientation: portrait) {
+          font-size: calc(($size / 768) * 100) + vw;
+    }
+}
+
+@mixin calcMulti($propValue) {
+  @media (orientation: landscape) {
+    @each $property, $expression in $propValue {
+      #{$property}: calc(calc($expression / 1024) * 100) + vw;
+    }
+  }
+  @media (orientation: portrait) {
+    @each $property, $expression in $propValue {
+      #{$property}: calc(calc($expression / 768) * 100) + vw;
+    }
+  }
+}
